@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>            
+$(document).ready(function() {
+                $("button").click(function() {
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/resource/3r8a-9kby.json",
+                        success: function(result) {
+                            console.log(result)
+                        }
+                    })
+                });
+            });
+        
+</script>
+<button> verv </button>    
+    
+    
+    
+</html>

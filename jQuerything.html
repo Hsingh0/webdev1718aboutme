@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#me2").click(function(){
+        $("#me").animate({left:'780px'});
+    });
+    $("#btn1").click(function(){
+        $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+    });
+    $("#btn2").click(function(){
+        $("#p2").css("color", "blue").slideUp(2000).slideDown(2000);
+    });
+    $("#btn4").click(function(){
+        $("#p3").css("color", "yellow").slideUp(2000).slideDown(2000);
+    });
+    $("#btn3").click(function(){
+        $("#bod1").removeClass("w3-teal").addClass("background");
+    });
+    $("#btn5").click(function(){
+        $("#p1").css("color", "yellow").fadeOut(1000).fadeIn(5000);
+        $("#p2").css("color", "blue").fadeOut(1000).fadeIn(5000);
+        $("#p3").css("color", "green").fadeOut(1000).fadeIn(5000);
+    });    
+    $("#flip").click(function(){
+       $("#panel").slideDown("slow");
+    });
+    $("#btn8").click(function(){
+        $("#btn7").hide("slow", function(){})
+        $("#btn9").hide("slow", function(){})
+        $("#btn10").hide("slow", function(){
+            alert("The links are now hidden");
+        })
+    });
+    $("#btn11").click(function(){
+        $("#btn7").show("slow", function(){})
+        $("#btn9").show("slow", function(){})
+        $("#btn10").show("slow", function(){
+            alert("The links are BACKK");
+        })
+    });
+    $("#btn12").click(function(){
+       $("#me").replaceAll("#pic2"); 
+    });
+}); 
+</script>
+<button id="btn3">Change Background color</button>
+<style>
+ 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+
+.h1{
+font-family:Impact;
+}
+.h2{
+    font-size:35px;
+}
+
+.p{
+    font-family:Verdana;
+}
+.li{
+    font-family: Verdana;
+}
+.background{
+    background-color:black;
+}
+.thick-blue-border {
+border-color: Tomato;
+border-width: 10px;
+border-style: solid;
+border-radius:10px;
+}
+.smaller-image {
+    width: 200px
+  }
+</style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head>
+    <div id="flip" class="w3-container w3-teal w3-center">
+    <h1> NAME?</h1>    
+    <div id="panel" class="w3-container w3-teal w3-center">
+    <h1 id="nam" style=" text-shadow:5px 5px 0 #000" class="w3-text-red"> <i> HARVIR SINGH</i></h1>
+    </div>   
+    </div>
+    <div id ="me" style="position:absolute" class="w3-center">
+    <button id="me2"><img id="me" class="smaller-image thick-blue-border" src="projpic" alt="UH OH"></img> </button>
+     </div>
+    </head>
+<body id="bod1" >
+    <div class="container">
+    <h2 style="color:Tomato"><b>INTERESTS</b> <span class="badge">3</span> </h2>
+    </div>
+<button id="btn5"> Click to see an even better effect</button>
+    
+<button id="btn8"> Click to get rid of links</button>
+<button id="btn11"> Miss the links?Bring em back here</button>
+<div id="div1" class="w3-container w3-teal">    
+    <ul>
+      <li id="btn7" class="w3-text-red w3-xlarge"><a href="https://webdev1718aboutme-hsingh3.c9users.io/projpt2.html">CARS </a> </li>
+</div>    
+<button id="btn12"> Hate all the pictures except mine, click here 3 times</button>
+<button id="btn1"> Click this to see cool detail</button>
+    </ul>
+    <div class="w3-text-white">
+    <p id="p1" > Car engines, trims, and mods are certain things that attract my interest. Cars can be manipulated into so many different forms and experiencing certain transformations is something that is so cool about them.</p>
+<img id="pic2" class="smaller-image thick-blue-border" src="https://goo.gl/sh11Wi" alt="UH OH">
+</div>
+<div class="w3-container w3-teal">
+   <ul>
+      <li id="btn9" class="w3-text-red w3-xlarge"> <a href="https://webdev1718aboutme-hsingh3.c9users.io/projpt3.html"> BASKETBALL</a></li>
+</div>
+<button id="btn2"> Click this to see cool detail</button>
+    </ul>
+    <div class="w3-text-white">
+    <p id="p2"> Basketball is my favorite sport. It is exciting and fun to watch and play. I watch the NBA and it is a place where amazing happens. </p>
+    </div>
+<img id="pic2" class="smaller-image thick-blue-border" src="https://goo.gl/TNkrH1" alt="BANU KUSH">
+<div class="w3-container w3-teal">
+    <ul>
+      <li id="btn10" class="w3-text-red w3-xlarge"><a href="https://webdev1718aboutme-hsingh3.c9users.io/projpt3.html"> FOOTBALL</a></li>
+</div> 
+     </ul>
+<button id="btn4"> Click this to see cool detail</button>
+    <div class="w3-text-white">
+    <p id="p3"> I became interested in football because of how physical it is. It requires strength and endurance like no other sport. Watching and playing football is very fun and exciting.  </p> 
+    </div>
+    <img id="pic2" class="smaller-image thick-blue-border" src="https://goo.gl/RACpGF" alt="BANU KUSH">
+
+</body>
+    
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+  <script>
+  
+    var canvas = document.querySelector("#myCanvas");
+    var ctx = canvas.getContext("2d");
+    var btx = canvas.getContext("2d");
+    var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop("0", "magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    
+    var grd=ctx.createLinearGradient(0,0,canvas.width,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(.3,"white");
+    grd.addColorStop(.6,"pink");
+        
+ctx.rect(0,0,400,400);
+ctx.fillStyle= grd;
+ctx.fill();
+
+ctx.strokeStyle = gradient;
+    ctx.moveTo(26,57);
+    ctx.arc(40,50,18, 5*Math.PI/6,13*Math.PI/6,false);
+    ctx.moveTo(26, 57);
+    ctx.quadraticCurveTo(10, 210, 55, 200);
+    ctx.lineWidth=10;
+    ctx.strokeStyle=gradient;
+    
+    
+    ctx.moveTo(58, 57);
+    ctx.quadraticCurveTo(30, 190, 95, 181);
+    
+    ctx.moveTo(136,57);
+    ctx.arc(150,50,18, 5*Math.PI/6,13*Math.PI/6,false);
+    ctx.quadraticCurveTo(178, 210, 135, 200);
+    
+    
+    ctx.moveTo(136, 57);
+    ctx.quadraticCurveTo(150, 190, 95, 181);
+    
+    
+    ctx.moveTo(25,343);
+    btx.arc(40,350,18, 7*Math.PI/6,11*Math.PI/6,true);
+    
+    
+    ctx.moveTo(25,343);
+    ctx.quadraticCurveTo(10, 190, 55, 200);
+    
+    ctx.moveTo(58,343);
+    ctx.quadraticCurveTo(30, 210, 95, 219);
+    ctx.moveTo(136,343);
+    ctx.arc(150,350,18, 7*Math.PI/6,11*Math.PI/6,true);
+    ctx.quadraticCurveTo(178, 190, 135, 200);
+    
+    ctx.moveTo(136,343);
+    ctx.quadraticCurveTo(150, 210, 95, 219);
+    ctx.stroke();
+    
+    /*S Letter*/
+    ctx.moveTo(342,65);
+    ctx.arc(350,50,18,2*Math.PI/3,4*Math.PI/3,true);
+    ctx.lineTo(230,36);
+    ctx.moveTo(341,66);
+    ctx.lineTo(234,66);
+    
+    
+    ctx.moveTo(230,36);
+    ctx.quadraticCurveTo(187,29,190,120);
+    ctx.stroke();
+    ctx.moveTo(234,66);
+    ctx.quadraticCurveTo(218,63,219,120);
+    ctx.stroke();
+    
+    ctx.moveTo(190,120);
+    ctx.quadraticCurveTo(185,220,220,220);
+    ctx.stroke();
+    
+    ctx.moveTo(219,120);
+    ctx.quadraticCurveTo(218,195,233,192);
+    ctx.stroke();
+    
+    ctx.moveTo(233,192);
+    ctx.lineTo(330,192);
+    ctx.moveTo(220,220);
+    ctx.lineTo(325,220);
+    ctx.stroke();
+    
+    ctx.moveTo(330,192);
+    ctx.quadraticCurveTo(365,195,366,250);
+    ctx.quadraticCurveTo(368,357,338,354);
+    ctx.stroke();
+    ctx.moveTo(325,220);
+    ctx.quadraticCurveTo(335,225,336,250);
+    ctx.quadraticCurveTo(332,313,328,320);
+    ctx.stroke();
+    ctx.moveTo(328,320);
+    ctx.lineTo(215,320);
+    ctx.moveTo(338,354);
+    ctx.lineTo(215,354);
+    ctx.stroke();
+    ctx.moveTo(215,354);
+    ctx.arc(205,337,19,Math.PI/3,5*Math.PI/3,false);
+    ctx.stroke();
+
+
+
+
+</script>
+ </body>
+ </html>

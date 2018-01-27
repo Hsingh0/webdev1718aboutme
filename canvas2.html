@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+<div>    
+<button> Click to see the Animation</button>
+</div>
+<canvas id="myCanvas" width="500" height="500"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            draw();
+        });
+    });
+    
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+var xval= 0;
+var speed= 1;
+var speed2= 1;
+var yval= Math.random()* canvas.height;
+var gditch = "pink";
+var colr;
+function draw() {
+ctx.clearRect(0,0,canvas.width, canvas.height);
+
+
+    ctx.fillStyle = "#0000ff";
+    ctx.fillRect(0,0,100,500);
+     ctx.fillStyle = "#7CFC00 ";
+    ctx.fillRect(100,0,100,500);
+     ctx.fillStyle = "#708090";
+    ctx.fillRect(200,0,100,500);
+     ctx.fillStyle = "#FF0000";
+    ctx.fillRect(300,0,100,500);
+     ctx.fillStyle = "#8A2BE2";
+    ctx.fillRect(400,0,100,500);
+
+if (xval<100 && xval>0 ){
+    colr = "#7CFC00";
+}
+if (xval<200 && xval>100 ){
+    colr = "#0000ff";
+}
+if (xval<300 && xval>200 ){
+    colr = "#708090";
+}
+if (xval<400 && xval>300 ){
+    colr = "#8A2BE2";
+}
+if (xval<500 && xval>400 ){
+    colr = "#FF0000";
+}
+
+if (xval < 0) {
+    speed= Math.random(15);
+    
+    
+}
+if (xval>canvas.width){
+    speed=-Math.random(15);
+}
+if (yval < 0) {
+    speed2=Math.random(15);
+}
+if (yval>canvas.height){
+    speed2=-Math.random(15);
+}
+
+yval+= speed2;
+xval+=speed; 
+gditch = colr;
+
+ctx.beginPath();
+ctx.arc(xval, yval, 15, 50,  * Math.PI);
+ctx.fillStyle = gditch;
+ctx.fill();
+ctx.stroke();    
+}
+        
+
+
+</script>
+
+</body>
+</html>

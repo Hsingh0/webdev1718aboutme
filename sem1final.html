@@ -1,0 +1,33 @@
+<DOCTYPE html>
+
+    <html lang="en">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <button>cbwv</button>
+ <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    //console.log("clicked");
+                    $.ajax({
+                        url: " https://data.cityofchicago.org/resource/tt4n-kn4t.json",
+                        success: function(result) {
+                            console.log(result);
+                            var output = "";
+                            
+                            $.each(result, function(index, value){
+ 
+                                $("#results").append(value.building_street + " " + value.original_lse_report_approved + "</div>"); 
+                            
+                            });
+                           
+                        }
+                    })
+                });
+            });
+        </script>

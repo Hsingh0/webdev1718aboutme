@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="">
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+var W = canvas.width = window.innerWidth;
+var H = canvas.height = window.innerHeight;
+ 
+function Ball() {
+    this.radius = 50;
+    this.x = canvas.width / 2;
+    this.y = canvas.height - this.radius - 20;
+ 
+    this.draw = function(ctx) {
+        ctx.fillStyle = 'black';
+        ctx.beginPath();
+ 
+        ctx.arc(
+            this.x,
+            this.y,
+            this.radius,
+            0,
+            Math.PI*2,
+            false
+        );
+ 
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+ 
+var ball = new Ball();
+if (
+        ball.x + ball.radius > canvas.width ||
+        ball.x - ball.radius < 0 ||
+        ball.y + ball.radius > canvas.height// ||
+        //ball.y - ball.radius  < 0
+    ) {
+     
+    // Re-positioning on the base
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height - ball.radius;
+     
+    // If we do not re-set the velocities
+    // then the ball will stick to bottom
+     
+    // Velocity x
+    vx = 0;
+    // Velocity y
+    vy = (Math.random() * -15) - 5;
+}
+</script>

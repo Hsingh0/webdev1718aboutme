@@ -17,12 +17,12 @@
     </div>
 <div class="w3-center">    
 <button> Click to see the Animation</button>
-<button id="btn">2 balls</button>
-<button id="btn2"> Click Twice to increase Ball Speed</button>
+<button id="btn2"> MOON LIKE-Gravity effect(Click multiple times for different effects)</button>
 </div>
 <canvas id="myCanvas" class="w3-center" width="500" height="500"
 style="border:1px solid #c3c3c3;">
 Your browser does not support the canvas element.
+
 </canvas>
 
 <script>
@@ -33,28 +33,36 @@ Your browser does not support the canvas element.
         });
     });
     
-    $(document).ready(function() {
-        $("#btn").click(function() {
-            draw2();
-            requestAnimationFrame(draw2);
-        });
-    });
+
     $(document).ready(function() {
         $("#btn2").click(function() {
             draw();
+            accel2 = .05;
+            accel4 = .05;
+            speed2+=accel2;
+            speed4+=accel4;
+            speed=0;
+            speed3=0;
+            if (speed2<0){
+                accel2=0;
+                speed2=0;
+            }
+            if (speed4<0){
+                accel4=0;
+                speed4=0;
+            }
+            
+            
             requestAnimationFrame(draw);
-            draw2();
-            requestAnimationFrame(draw2);
-             var speed=1000;
-            var speed2= 1000;
-            var speed3= 1000;
-            var speed4= 1000;
         });
     });
+
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var btx = canvas.getContext("2d");
+
+
 
 var xval= 0;
 var speed= 1;
@@ -62,15 +70,19 @@ var speed2= 1;
 var speed3= 1;
 var speed4= 1;
 var xval2=0;
-var yval2=0;
+var yval2=Math.random()* canvas.height;
 var yval= Math.random()* canvas.height;
+var accel= Math.random(2,5);
+var accel2= Math.random(2,5);
+var accel3= Math.random(2,5);
+var accel4= Math.random(2,5);
 var gditch = "pink";
 var colr;
-var radius=20;
-ctx.clearRect(0,0,canvas.width, canvas.height);
-function draw() {
+var radius= 25;
 
-    ctx.fillStyle = "#0000ff";
+function draw() {
+ctx.clearRect(0,0,canvas.width, canvas.height);
+ctx.fillStyle = "#0000ff";
     ctx.fillRect(0,0,100,500);
      ctx.fillStyle = "#7CFC00 ";
     ctx.fillRect(100,0,100,500);
@@ -98,32 +110,30 @@ if (xval<500 && xval>400 ){
 }
 
 if (xval < 0) {
-    speed= Math.random(0,8);
+    speed+= accel
 }
-if (xval>canvas.width){
-    speed=-Math.random(0,8);
+if (xval>canvas.width-20){
+    speed+=-accel
 }
 if (yval < 0) {
-    speed2=Math.random(0,8);
+    speed2+=accel2
 }
-if (yval>canvas.height){
-    speed2=-Math.random(0,8);
+if (yval>canvas.height-20){
+    speed2+=-accel2
 }
+
+
 
 yval+= speed2;
 xval+=speed; 
 gditch = colr;
 
 ctx.beginPath();
-ctx.arc(xval, yval,xval/12,30, 25*Math.PI);
+ctx.arc(xval, yval,radius,30, 25*Math.PI);
 ctx.fillStyle = gditch;
 ctx.fill();
 ctx.stroke();    
 
-requestAnimationFrame(draw);
-}
-
-function draw2() {
 
 if (xval2<100 && xval2>0 ){
     colr = "#7CFC00";
@@ -141,32 +151,31 @@ if (xval2<500 && xval2>400 ){
     colr = "#FF0000";
 }
 
-if (xval2 < 0) {
-    speed3=Math.random(15);
+if (xval2 < 30) {
+    speed3+=accel3;
 }
 
-if (xval2>canvas.width){
-    speed3=-Math.random(15);
+if (xval2>canvas.width-30){
+    speed3+=-accel3;
 }
-if (yval2 < 0) {
-    speed4=Math.random(15);
+if (yval2 < 30) {
+    speed4+=accel4;
 }
-if (yval2>canvas.height){
-    speed4=-Math.random(15);
+if (yval2>canvas.height-30){
+    speed4+=-accel4;
 }
-
 
 xval2+= speed3;
 yval2+=speed4; 
-gditch = colr;
+
 btx.moveTo(xval2,yval2);
 btx.beginPath();
-btx.arc(xval2, yval2,xval/12,30, 25*Math.PI);
+btx.arc(xval2, yval2,radius,30, 25*Math.PI);
 btx.fillStyle = gditch;
 btx.fill();
 btx.stroke();    
 
-requestAnimationFrame(draw2);
+requestAnimationFrame(draw);
 }
 
 
